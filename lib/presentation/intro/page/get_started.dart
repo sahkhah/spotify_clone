@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lorem_ipsum_generator/lorem_ipsum_generator.dart';
+import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
 import 'package:music_app/core/configs/assets/app_vectors.dart';
+import 'package:music_app/core/configs/theme/app_colors.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String text = LoremIpsumGenerator.generate(paragraphs: 1);
+    String text = LoremIpsumGenerator.generate(
+      paragraphs: 1,
+      wordsPerParagraph: 20,
+    );
     return Scaffold(
       body: Stack(
         children: [
           Container(
+            padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 40),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(AppImages.intro),
@@ -22,11 +28,9 @@ class GetStarted extends StatelessWidget {
             ),
             child: Column(
               children: [
+                Gap(50),
                 //SvgPicture.asset(AppVectors.logo),
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Image.asset(AppVectors.logo),
-                ),
+                Image.asset(AppVectors.logo),
                 Spacer(),
                 Text(
                   'Enjoy listening to music',
@@ -39,12 +43,15 @@ class GetStarted extends StatelessWidget {
                 Gap(10),
                 Text(
                   text,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 14.0,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.grey,
                   ),
                 ),
+                Gap(20),
+                BasicAppBotton(onPressed: () {}, title: 'Get Started'),
               ],
             ),
           ),
