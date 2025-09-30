@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:lorem_ipsum_generator/lorem_ipsum_generator.dart';
 import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
 import 'package:music_app/core/configs/assets/app_vectors.dart';
 import 'package:music_app/core/configs/theme/app_colors.dart';
-import 'package:music_app/presentation/choose_mode/page/choose_mode.dart';
 
-class GetStarted extends StatelessWidget {
-  const GetStarted({super.key});
+class ChooseModePage extends StatelessWidget {
+  const ChooseModePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String text = LoremIpsumGenerator.generate(
-      paragraphs: 1,
-      wordsPerParagraph: 20,
-    );
     return Scaffold(
       body: Stack(
         children: [
@@ -41,24 +35,28 @@ class GetStarted extends StatelessWidget {
               Image.asset(AppVectors.logo),
               Spacer(),
               Text(
-                'Enjoy listening to music',
+                'Choose Mode',
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
-              Gap(10),
-              Text(
-                text,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w500,
-                  color: AppColor.grey,
-                ),
-              ),
               Gap(20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 38,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ],
+              ),
+
               BasicAppBotton(
                 onPressed: () {
                   Navigator.pushReplacement(
@@ -68,7 +66,6 @@ class GetStarted extends StatelessWidget {
                 },
                 title: 'Get Started',
               ),
-              Gap(40),
             ],
           ),
         ],

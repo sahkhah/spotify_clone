@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/configs/theme/app_theme.dart';
+import 'package:music_app/presentation/choose_mode/page/choose_mode.dart';
 import 'package:music_app/presentation/splash/pages/splash.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
-      home: SplashPage()
+      home: ChooseModePage()
     );
   }
 }
