@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
@@ -25,48 +28,108 @@ class ChooseModePage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               // ignore: deprecated_member_use
-              color: Colors.black.withOpacity(0.15),
+              color: Colors.black.withOpacity(0.5),
             ),
           ),
-          Column(
-            children: [
-              Gap(50),
-              //SvgPicture.asset(AppVectors.logo),
-              Image.asset(AppVectors.logo),
-              Spacer(),
-              Text(
-                'Choose Mode',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              Gap(20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 38,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+            child: Column(
+              children: [
+                Gap(50),
+                //SvgPicture.asset(AppVectors.logo),
+                Image.asset(AppVectors.logo),
+                Spacer(),
+                Text(
+                  'Choose Mode',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                ],
-              ),
-
-              BasicAppBotton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChooseModePage()),
-                  );
-                },
-                title: 'Get Started',
-              ),
-            ],
+                ),
+                Gap(40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: Color(0xff30393c).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.nightlight_outlined,
+                                color: Colors.white,
+                                size: 50,
+                              ),
+                              //SvgPicture.asset(fit: BoxFit.none, AppVectors.sun),
+                            ),
+                          ),
+                        ),
+                        Gap(30),
+                        Text(
+                          'Dark Mode',
+                          style: TextStyle(
+                            color: AppColor.grey,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Gap(40),
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: Color(0xff30393c).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.wb_sunny_outlined,
+                                color: Colors.white,
+                                size: 50,
+                              ),
+                            ),
+                          ),
+                        ),
+                         Gap(30),
+                        Text(
+                          'Light Mode',
+                          style: TextStyle(
+                            color: AppColor.grey,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Gap(40),
+                BasicAppBotton(
+                  onPressed: () {
+                    /* Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChooseModePage()),
+                    ); */
+                  },
+                  title: 'Continue',
+                ),
+                Gap(40),
+              ],
+            ),
           ),
         ],
       ),

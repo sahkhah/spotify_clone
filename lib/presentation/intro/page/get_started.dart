@@ -20,7 +20,7 @@ class GetStarted extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 40),
+            padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(AppImages.intro),
@@ -34,42 +34,45 @@ class GetStarted extends StatelessWidget {
               color: Colors.black.withOpacity(0.15),
             ),
           ),
-          Column(
-            children: [
-              Gap(50),
-              //SvgPicture.asset(AppVectors.logo),
-              Image.asset(AppVectors.logo),
-              Spacer(),
-              Text(
-                'Enjoy listening to music',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, right: 10.0,),
+            child: Column(
+              children: [
+                Gap(50),
+                //SvgPicture.asset(AppVectors.logo),
+                Image.asset(AppVectors.logo),
+                Spacer(),
+                Text(
+                  'Enjoy listening to music',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              Gap(10),
-              Text(
-                text,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w500,
-                  color: AppColor.grey,
+                Gap(10),
+                Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.grey,
+                  ),
                 ),
-              ),
-              Gap(20),
-              BasicAppBotton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChooseModePage()),
-                  );
-                },
-                title: 'Get Started',
-              ),
-              Gap(40),
-            ],
+                Gap(20),
+                BasicAppBotton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChooseModePage()),
+                    );
+                  },
+                  title: 'Get Started',
+                ),
+                Gap(40),
+              ],
+            ),
           ),
         ],
       ),

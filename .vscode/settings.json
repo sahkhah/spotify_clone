@@ -1,6 +1,6 @@
 {
         "folder-color.pathColors": [],
-        "editor.fontSize": 6,
+        "editor.fontSize": 8.5,
         "editor.mouseWheelZoom": true,
         "files.autoSave": "afterDelay",
         "chat.fontSize": 10,
@@ -8,5 +8,5 @@
         "terminal.integrated.fontSize": 10,
         "scm.inputFontSize": 10,
         "debug.console.fontSize": 10,
-        "workbench.iconTheme": "vscode-icons"
+        "workbench.iconTheme": null
 }
