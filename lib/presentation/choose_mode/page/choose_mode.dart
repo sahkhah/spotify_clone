@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -8,6 +10,7 @@ import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
 import 'package:music_app/core/configs/assets/app_vectors.dart';
 import 'package:music_app/core/configs/theme/app_colors.dart';
+import 'package:music_app/presentation/auth/page/signuporsignin.dart';
 import 'package:music_app/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -55,27 +58,27 @@ class ChooseModePage extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        GestureDetector(
-                          onTap: context.read<ThemeCubit>().updateTheme(
-                            ThemeMode.dark,
-                          ),
-                          child: ClipOval(
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                              child: Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                  color: Color(0xff30393c).withOpacity(0.5),
-                                  shape: BoxShape.circle,
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: Color(0xff30393c).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: GestureDetector(
+                                onTap: context.read<ThemeCubit>().updateTheme(
+                                  ThemeMode.dark,
                                 ),
                                 child: Icon(
                                   Icons.nightlight_outlined,
                                   color: Colors.white,
                                   size: 50,
                                 ),
-                                //SvgPicture.asset(fit: BoxFit.none, AppVectors.sun),
                               ),
+                              //SvgPicture.asset(fit: BoxFit.none, AppVectors.sun),
                             ),
                           ),
                         ),
@@ -94,7 +97,9 @@ class ChooseModePage extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: context.read<ThemeCubit>().updateTheme(ThemeMode.light),
+                          onTap: context.read<ThemeCubit>().updateTheme(
+                            ThemeMode.light,
+                          ),
                           child: ClipOval(
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
@@ -114,7 +119,7 @@ class ChooseModePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                         Gap(30),
+                        Gap(30),
                         Text(
                           'Light Mode',
                           style: TextStyle(
@@ -130,10 +135,12 @@ class ChooseModePage extends StatelessWidget {
                 Gap(40),
                 BasicAppBotton(
                   onPressed: () {
-                    /* Navigator.pushReplacement(
+                    Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => ChooseModePage()),
-                    ); */
+                      MaterialPageRoute(
+                        builder: (context) => SignUporSignInPage(),
+                      ),
+                    );
                   },
                   title: 'Continue',
                 ),

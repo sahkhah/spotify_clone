@@ -35,7 +35,7 @@ class GetStarted extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10.0, right: 10.0,),
+            padding: const EdgeInsets.only(left: 25.0, right: 25.0,),
             child: Column(
               children: [
                 Gap(50),
@@ -50,7 +50,7 @@ class GetStarted extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Gap(10),
+                Gap(20),
                 Text(
                   text,
                   textAlign: TextAlign.center,
@@ -60,7 +60,7 @@ class GetStarted extends StatelessWidget {
                     color: AppColor.grey,
                   ),
                 ),
-                Gap(20),
+                Spacer(),
                 BasicAppBotton(
                   onPressed: () {
                     Navigator.pushReplacement(
