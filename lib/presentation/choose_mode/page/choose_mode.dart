@@ -1,12 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
 import 'package:music_app/core/configs/assets/app_vectors.dart';
 import 'package:music_app/core/configs/theme/app_colors.dart';
+import 'package:music_app/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
@@ -53,22 +55,27 @@ class ChooseModePage extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        ClipOval(
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                            child: Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: Color(0xff30393c).withOpacity(0.5),
-                                shape: BoxShape.circle,
+                        GestureDetector(
+                          onTap: context.read<ThemeCubit>().updateTheme(
+                            ThemeMode.dark,
+                          ),
+                          child: ClipOval(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              child: Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff30393c).withOpacity(0.5),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.nightlight_outlined,
+                                  color: Colors.white,
+                                  size: 50,
+                                ),
+                                //SvgPicture.asset(fit: BoxFit.none, AppVectors.sun),
                               ),
-                              child: Icon(
-                                Icons.nightlight_outlined,
-                                color: Colors.white,
-                                size: 50,
-                              ),
-                              //SvgPicture.asset(fit: BoxFit.none, AppVectors.sun),
                             ),
                           ),
                         ),
@@ -86,20 +93,23 @@ class ChooseModePage extends StatelessWidget {
                     Gap(40),
                     Column(
                       children: [
-                        ClipOval(
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                            child: Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: Color(0xff30393c).withOpacity(0.5),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.wb_sunny_outlined,
-                                color: Colors.white,
-                                size: 50,
+                        GestureDetector(
+                          onTap: context.read<ThemeCubit>().updateTheme(ThemeMode.light),
+                          child: ClipOval(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              child: Container(
+                                width: 80,
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff30393c).withOpacity(0.5),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.wb_sunny_outlined,
+                                  color: Colors.white,
+                                  size: 50,
+                                ),
                               ),
                             ),
                           ),
