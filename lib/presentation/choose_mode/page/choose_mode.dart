@@ -42,7 +42,7 @@ class ChooseModePage extends StatelessWidget {
               children: [
                 Gap(50),
                 //SvgPicture.asset(AppVectors.logo),
-                Image.asset(AppVectors.logo),
+                Image.asset(AppImages.spotifyLogo),
                 Spacer(),
                 Text(
                   'Choose Mode',
@@ -69,7 +69,7 @@ class ChooseModePage extends StatelessWidget {
                                 shape: BoxShape.circle,
                               ),
                               child: GestureDetector(
-                                onTap: context.read<ThemeCubit>().updateTheme(
+                                onTap: ()=> context.read<ThemeCubit>().updateTheme(
                                   ThemeMode.dark,
                                 ),
                                 child: Icon(
@@ -97,7 +97,7 @@ class ChooseModePage extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: context.read<ThemeCubit>().updateTheme(
+                          onTap:()=> context.read<ThemeCubit>().updateTheme(
                             ThemeMode.light,
                           ),
                           child: ClipOval(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/core/configs/assets/app_images.dart';
 
 
 
@@ -21,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.asset('assets/vectors/spotify_logo.svg')),
+      body: Center(child: Image.asset(AppImages.spotifyLogo)),
     );
   }
 

@@ -35,43 +35,48 @@ class GetStarted extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 25.0, right: 25.0,),
-            child: Column(
-              children: [
-                Gap(50),
-                //SvgPicture.asset(AppVectors.logo),
-                Image.asset(AppVectors.logo),
-                Spacer(),
-                Text(
-                  'Enjoy listening to music',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+            padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Gap(200),
+                  //SvgPicture.asset(AppVectors.logo),
+                  Image.asset(AppImages.spotifyLogo, height: 100, width: 300),
+                  Spacer(flex: 2),
+                  Text(
+                    'Enjoy listening to music',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                Gap(20),
-                Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w500,
-                    color: AppColor.grey,
+                  Gap(20),
+                  Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.grey,
+                    ),
                   ),
-                ),
-                Spacer(),
-                BasicAppBotton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => ChooseModePage()),
-                    );
-                  },
-                  title: 'Get Started',
-                ),
-                Gap(40),
-              ],
+                  Gap(20),
+                  BasicAppBotton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChooseModePage(),
+                        ),
+                      );
+                    },
+                    title: 'Get Started',
+                  ),
+                  Gap(50),
+                ],
+              ),
             ),
           ),
         ],
