@@ -23,14 +23,14 @@ class SignUporSignInPage extends StatelessWidget {
               children: [
                 //Gap(50),
                 //SvgPicture.asset(AppVectors.logo),
-                Image.asset(AppImages.spotifyLogo, height: 80, width: 300,),
+                Image.asset(AppImages.spotifyLogo, height: 80, width: 300),
                 Gap(30),
                 Text(
                   'Enjoy listening to music',
                   style: TextStyle(
                     fontSize: 26.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: context.isDarkMode ? Colors.white : Colors.black,
                   ),
                 ),
                 Gap(20),
@@ -68,7 +68,10 @@ class SignUporSignInPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: context.isDarkMode? Colors.white : Colors.white,
+                            color:
+                                context.isDarkMode
+                                    ? Colors.white
+                                    : Colors.black,
                           ),
                         ),
                       ),

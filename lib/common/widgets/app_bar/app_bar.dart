@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:music_app/common/helper/is_dark_mode.dart';
 
 class BasicAppBar extends StatelessWidget {
   const BasicAppBar({super.key});
@@ -7,7 +10,28 @@ class BasicAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
-      
+      elevation: 0,
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: Container(
+          margin: const EdgeInsets.only(left: 10.0),
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            color:
+                context.isDarkMode
+                    ? Colors.white.withOpacity(0.03)
+                    : Colors.black.withOpacity(0.04),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            Icons.arrow_back_sharp,
+            color: context.isDarkMode ? Colors.white : Colors.black,
+          ),
+        ),
+      ),
     );
   }
 }
