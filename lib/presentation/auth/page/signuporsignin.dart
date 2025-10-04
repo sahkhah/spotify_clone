@@ -6,6 +6,7 @@ import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
 import 'package:music_app/core/configs/lorem_generator/lorem_generator.dart';
 import 'package:music_app/core/configs/theme/app_colors.dart';
+import 'package:music_app/presentation/auth/page/signup.dart';
 
 class SignUporSignInPage extends StatelessWidget {
   const SignUporSignInPage({super.key});
@@ -50,10 +51,10 @@ class SignUporSignInPage extends StatelessWidget {
                       flex: 1,
                       child: BasicAppBotton(
                         onPressed: () {
-                          /*  Navigator.pushReplacement(
+                           Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ChooseModePage()),
-                      ); */
+                        MaterialPageRoute(builder: (context) => SignupPage()),
+                      );
                         },
                         title: 'Register',
                       ),

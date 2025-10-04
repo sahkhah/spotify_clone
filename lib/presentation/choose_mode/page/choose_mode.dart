@@ -4,11 +4,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:music_app/common/widgets/app_bar/app_bar.dart';
 import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
-import 'package:music_app/core/configs/assets/app_vectors.dart';
 import 'package:music_app/core/configs/theme/app_colors.dart';
 import 'package:music_app/presentation/auth/page/signuporsignin.dart';
 import 'package:music_app/presentation/choose_mode/bloc/theme_cubit.dart';
@@ -32,10 +31,10 @@ class ChooseModePage extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              // ignore: deprecated_member_use
-              color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withOpacity(0.5),
             ),
           ),
+           BasicAppBar(),
           Padding(
             padding: const EdgeInsets.only(left: 10.0, right: 10.0),
             child: Column(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lorem_ipsum_generator/lorem_ipsum_generator.dart';
+import 'package:music_app/common/widgets/app_bar/app_bar.dart';
 import 'package:music_app/common/widgets/bottons/basic_app_botton.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
-import 'package:music_app/core/configs/assets/app_vectors.dart';
 import 'package:music_app/core/configs/theme/app_colors.dart';
 import 'package:music_app/presentation/choose_mode/page/choose_mode.dart';
 
@@ -19,6 +19,7 @@ class GetStarted extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          BasicAppBar(),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
             decoration: BoxDecoration(
